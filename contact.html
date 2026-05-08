@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - 404SOCIETY</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="left">
+    <div class="search-wrap">
+      <!-- No search in contact page, so leave empty or remove -->
+    </div>
+  </div>
+  <div class="right">
+    <span id="date"></span>
+    <button class="subscribe-btn">Subscribe</button>
+  </div>
+</div>
+
+<!-- LOGO -->
+<div class="logo-section">
+  <h1>404SOCIETY</h1>
+  <p>Beyond the Headlines.</p>
+</div>
+
+<!-- CONTACT FORM -->
+<div class="contact-section">
+  <div class="contact-form">
+    <h2>CONTACT</h2>
+    <p>In the criminal justice system, the people are represented by two separate yet equally important groups. The police who investigate crime and the district attorneys who prosecute the offenders. These are their stories.</p>
+    <form>
+      <label>Your Name</label>
+      <input type="text" placeholder="Full Name" required>
+      <label>Your Email</label>
+      <input type="email" placeholder="Email" required>
+      <label>Subject</label>
+      <input type="text" placeholder="Subject" required>
+      <label>Your Message (optional)</label>
+      <textarea placeholder="Message" rows="6"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-nav">
+    <a href="index.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+  <div class="copyright">
+    &copy; 2026 404SOCIETY. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+const dateEl = document.getElementById('date');
+const today = new Date();
+const options = { weekday:'long', year:'numeric', month:'long', day:'numeric'};
+dateEl.textContent = today.toLocaleDateString(undefined, options);
+</script>
+
+</body>
+</html>

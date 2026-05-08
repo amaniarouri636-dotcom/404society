@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404SOCIETY</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="left">
+    <div class="search-wrap">
+         <span class="search-icon" onclick="toggleSearch()">🔎︎</span>
+      <input type="text" placeholder="Search..." id="searchInput" onkeyup="filterArticles()">
+    </div>
+  </div>
+  <div class="right">
+    <span id="date"></span>
+    <button class="subscribe-btn">Subscribe</button>
+  </div>
+</div>
+
+<!-- LOGO -->
+<div class="logo-section">
+  <h1>404SOCIETY</h1>
+  <p>Beyond the Headlines.</p>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+  <ul>
+    <li>Posts +</li>
+    <li>World +</li>
+    <li>Music +</li>
+    <li>Interview +</li>
+    <li>Lifestyle +</li>
+    <li>Opinion +</li>
+  </ul>
+</nav>
+
+<!-- HERO IMAGE -->
+<div class="hero">
+  <img src="https://i.pinimg.com/1200x/eb/ff/06/ebff069bcf69d37faa1df6a636b0dd1c.jpg" alt="Old Man Reading Newspaper">
+</div>
+
+<!-- ABOUT -->
+<div class="about-us">
+  <span class="about-us-title">404SOCIETY — Where Tradition Meets Truth. Since 2011</span><br>
+  404SOCIETY is driven by a relentless pursuit of stories that shape our world. Rooted in the heritage of print journalism while embracing the clarity of the digital age, we deliver news, analysis, and narratives that go beyond the headlines. Journalism here is more than reporting—it is preserving history, scrutinizing power, and amplifying the voices that define our era. Each article is crafted to inform, challenge, and inspire, honoring the past while illuminating the path ahead.
+</div>
+
+<!-- ARTICLES -->
+<div class="articles" id="articlesContainer">
+  <div class="article highlight">
+    <img src="https://christianasylumseekersassociation.wordpress.com/wp-content/uploads/2015/07/child-abuse-ad.jpg" alt="Stop Child Abuse">
+    <h3>STOP CHILD ABUSE</h3>
+    <p>Every war and conflict hits children first. Protecting the innocent is our responsibility.</p>
+    <a href="https://christianasylumseekersassociation.wordpress.com/saving-innocent-souls-saving-your-children-from-sexual-abuse/" target="_blank" class="article-link">Read Full Article (Online)</a>
+  </div>
+
+  <div class="article">
+    <img src="https://media.wired.com/photos/692e12f9af64985296d48efc/16:9/w_2560%2Cc_limit/sec-epstein-docs-2148187943.jpg" alt="Epstin file">
+    <h3>EPSTIN FILES</h3>
+    <p>Up to 98% still unreleased - incompetence or cover-up?</p>
+    <a href="https://docs.house.gov/meetings/JU/JU08/20250227/117951/HHRG-119-JU08-20250227-SD006-U6.pdf" target="_blank" class="article-link">Read Full Article (PDF)</a>
+  </div>
+
+  <div class="article">
+    <img src="https://festivaldehammamet.com/telechargements/actualites/festival_international_hammamet_168.png" alt="Music Festival">
+    <h3>The Sound of Revolution: How Tunisian Music Shapes Voices of Change</h3>
+    <p>Exploring the impact of music on Tunisia's cultural identity and social movements.</p>
+    <a href="https://oro.open.ac.uk/61458/1/13835502.pdf" target="_blank" class="article-link">Read Full Article (PDF)</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-nav">
+    <a href="index.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+  <div class="copyright">
+    &copy; 2026 404SOCIETY. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+const dateEl = document.getElementById('date');
+const today = new Date();
+const options = { weekday:'long', year:'numeric', month:'long', day:'numeric'};
+dateEl.textContent = today.toLocaleDateString(undefined, options);
+
+function filterArticles() {
+  const input = document.getElementById('searchInput').value.trim().toLowerCase();
+  const articles = document.querySelectorAll('#articlesContainer .article');
+  articles.forEach(article => {
+    const title = article.querySelector('h3').textContent.toLowerCase();
+    article.style.display = title.includes(input) ? "" : "none";
+  });
+}
+
+function toggleSearch() {
+  const input = document.getElementById('searchInput');
+  input.classList.toggle('open');
+  if (input.classList.contains('open')) input.focus();
+}
+</script>
+</body>
+</html>
